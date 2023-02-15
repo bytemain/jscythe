@@ -1,10 +1,13 @@
-const { existsSync, mkdirSync } = require("fs");
+const { existsSync, mkdirSync, rmSync } = require("fs");
 const { join } = require("path");
 const { spawnSync, spawn } = require("child_process");
 
 const axios = require("axios");
 const tar = require("tar");
-const rimraf = require("rimraf");
+
+const rmrf = path => {
+  return rmSync(path, { force: true, recursive: true });
+}
 
 const error = msg => {
   console.error(msg);
@@ -57,13 +60,13 @@ class Binary {
 
   uninstall() {
     if (existsSync(this.installDirectory)) {
-      rimraf.sync(this.installDirectory);
+      rmrf(this.installDirectory);
     }
   }
 
   install(fetchOptions, suppressLogs = false) {
     if (existsSync(this.installDirectory)) {
-      rimraf.sync(this.installDirectory);
+      rmrf(this.installDirectory);
     }
 
     mkdirSync(this.installDirectory, { recursive: true });
