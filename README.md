@@ -1,8 +1,31 @@
+# jscythe
+
+[![npm package](https://img.shields.io/npm/v/jscythe.svg?style=flat-square)](https://www.npmjs.com/package/jscythe)
+[![GitHub stars](https://img.shields.io/github/stars/bytemain/jscythe.svg)](https://github.com/bytemain/jscythe/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/bytemain/jscythe.svg)](https://github.com/bytemain/jscythe/network/members)
+[![NPM downloads](https://img.shields.io/npm/dm/jscythe.svg?style=flat-square)](https://www.npmjs.com/package/jscythe)
+[![GitHub issues](https://img.shields.io/github/issues/bytemain/jscythe.svg)](https://github.com/bytemain/jscythe/issues)
+
+
 jscythe abuses the node.js [inspector mechanism](https://nodejs.org/en/docs/guides/debugging-getting-started/) in order to force any node.js/electron/v8 based process to execute arbitrary javascript code, even if their debugging capabilities are disabled.
 
 ![vscode](https://i.imgur.com/MmUupgZ.jpg)
 
 Tested and working against Visual Studio Code, Discord, any Node.js application and more!
+
+## Quick Start
+
+Install the `jscythe` binary:
+
+```sh
+npm i -g jscythe
+```
+
+Target a specific process and execute a basic expression:
+
+```sh
+jscythe --pid 666 --code "5 - 3 + 2"
+```
 
 ## How
 
