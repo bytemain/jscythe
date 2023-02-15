@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "binary-installer": "^0.0.2"
+    "binary-installer": "^0.0.3"
   },
   "bin": {
     "jscythe": "./run.js"
