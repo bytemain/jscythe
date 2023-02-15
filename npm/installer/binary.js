@@ -1,6 +1,6 @@
 const { existsSync, mkdirSync } = require("fs");
 const { join } = require("path");
-const { spawnSync } = require("child_process");
+const { spawnSync, spawn } = require("child_process");
 
 const axios = require("axios");
 const tar = require("tar");
@@ -62,15 +62,6 @@ class Binary {
   }
 
   install(fetchOptions, suppressLogs = false) {
-    if (this.exists()) {
-      if (!suppressLogs) {
-        console.error(
-          `${this.name} is already installed, skipping installation.`
-        );
-      }
-      return Promise.resolve();
-    }
-
     if (existsSync(this.installDirectory)) {
       rimraf.sync(this.installDirectory);
     }
@@ -101,9 +92,20 @@ class Binary {
       });
   }
 
-  run(fetchOptions) {
+  async run() {
     if (!this.exists()) {
-      this.install(fetchOptions, true)
+      await this.install()
+    }
+    const [, , ...args] = process.argv;
+    const child = spawn(this.binaryPath, args, { cwd: process.cwd(), stdio: "inherit" });
+    child.on('close', (code) => {
+      console.log(`\nProcess exited with code ${code}`);
+    });
+  }
+
+  runSync() {
+    if (!this.exists()) {
+      this.install()
     }
 
     const [, , ...args] = process.argv;
