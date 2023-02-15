@@ -9,7 +9,7 @@
     "tar": "^6.1.11"
   },
   "bin": {
-    "jscythe": "./npm/run.js"
+    "jscythe": "./run.js"
   },
   "scripts": {
     "postinstall": "node install.js"

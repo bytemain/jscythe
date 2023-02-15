@@ -12,5 +12,9 @@ build:
 
 tar:
 	mkdir -p dist
-	tar -C build -czvf dist/jscythe-darwin-x64.tar.gz jscythe-darwin-x64
-	tar -C build -czvf dist/jscythe-darwin-arm64.tar.gz jscythe-darwin-arm64
+	COPYFILE_DISABLE=1 tar -C build -czvf dist/jscythe-darwin-x64.tar.gz jscythe-darwin-x64
+	COPYFILE_DISABLE=1 tar -C build -czvf dist/jscythe-darwin-arm64.tar.gz jscythe-darwin-arm64
+
+clean:
+	rm -rf build
+	rm -rf dist
