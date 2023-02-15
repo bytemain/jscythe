@@ -1,7 +1,6 @@
-const npm = require('./installer');
-const binary = npm();
+const { binary, install } = require("./binary");
 if (binary.exists()) {
-  console.log(`\n${binary.name} is already installed, reinstalling...`)
+  console.log(`\n${binary.name} is already installed, reinstalling...`);
   binary.uninstall();
 }
 
