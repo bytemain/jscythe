@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "binary-install": "^1.0.6"
+    "axios": "^0.26.1",
+    "rimraf": "^3.0.2",
+    "tar": "^6.1.11"
   },
   "bin": {
     "jscythe": "./npm/run.js"

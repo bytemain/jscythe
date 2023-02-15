@@ -1,5 +1,7 @@
-const { Binary } = require('binary-install');
+const { Binary } = require('./binary');
 const os = require('os');
+
+const name = 'jscythe';
 
 function getPlatform() {
     const type = os.type();
@@ -15,9 +17,8 @@ function getPlatform() {
 function getBinary() {
     const platform = getPlatform();
     const version = require('../package.json').version;
-    const url = `https://github.com/bytemain/jscythe/releases/download/v${version}/jscythe-${platform}.tar.gz`;
-    const name = 'jscythe';
-    return new Binary(url, { name });
+    const url = `https://gh.artin.li/https://github.com/bytemain/jscythe/releases/download/v${version}/jscythe-${platform}.tar.gz`;
+    return new Binary(name, url);
 }
 
 module.exports = getBinary;

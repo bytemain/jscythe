@@ -14,15 +14,6 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
 
-binary-install@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/binary-install/-/binary-install-1.0.6.tgz#7d603003da4f890d13d3e887773e86776e0d24a3"
-  integrity sha512-h3K4jaC4jEauK3csXI9GxGBJldkpuJlHCIBv8i+XBNhPuxnlERnD1PWVczQYDqvhJfv0IHUbB3lhDrZUMHvSgw==
-  dependencies:
-    axios "^0.26.1"
-    rimraf "^3.0.2"
-    tar "^6.1.11"
-
 brace-expansion@^1.1.7:
   version "1.1.11"
   resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
