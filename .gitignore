@@ -3,3 +3,6 @@
 /*.js
 /*.py
 /test-*
+
+build
+dist
